@@ -1,12 +1,11 @@
 language: generic
 sudo: required
 
-
 services:
   - docker
 
 before_install:
-  - docker build -t lahnaoja/complex -f ./client/Dockerfile.dev ./client
+  - docker build -t lahnaoja/multi-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true lahnaoja/multi-test npm test
